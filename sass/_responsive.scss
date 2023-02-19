@@ -1,0 +1,25 @@
+@media screen and (min-width:500px){
+  .card{
+    width: 400px;
+    margin: 0 auto;
+
+    &--id{
+      width: 20%;
+    }
+    &--ability{
+      width: 20%;
+    }
+    &--hiddenAbility{
+      width: 20%;
+    }
+    &--height{
+      width: 20%;
+    }
+    &--type{
+      width: 20%;
+    }
+    &--weight{
+      width: 20%;
+    }
+  }
+}
