@@ -1,10 +1,45 @@
 .card{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 
   &__box{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__info{
+    padding: 5px;
+
+    font-weight: 600;
+
+    & span{
+      font-weight: 200;
+    }
+
+    &--id{
+      width: 40%;
+    }
+    &--ability{
+      width: 40%;
+      text-transform: capitalize;
+    }
+    &--hiddenAbility{
+      width: 40%;
+      text-transform: capitalize;
+    }
+    &--height{
+      width: 40%;
+    }
+    &--type{
+      width: 40%;
+      text-transform: capitalize;
+    }
+    &--weight{
+      width: 40%;
+    }
   }
 
   &__picture{
@@ -12,8 +47,10 @@
   }
 
   &__title{
-    font-size: 1.8em;
-    font-weight: 600;
-    padding: 6px 0;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 1.6em;
+    text-align: center;
+    text-transform: capitalize;
   }
 }

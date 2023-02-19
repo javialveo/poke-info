@@ -15,6 +15,21 @@
     <main id="cardContainer" class="container">
     </main>
 
+    <template id="cardTemplate">
+      <div class="card">
+        <h3 id="card_title" class="card__title">pokemon</h3>
+        <div class="card__box card__box--picture"><img id="card_picture" class="card__picture"></div>
+        <div class="card__box card__box--body">
+          <p class="card__info card__info--id">ID: <span id="card_id"></span></p>
+          <p class="card__info card__info--type">Type: <span id="card_type"></span></p>
+          <p class="card__info card__info--height">Height: <span id="card_height"></span></p>
+          <p class="card__info card__info--weight">Weight: <span id="card_weight"></span></p>
+          <p class="card__info card__info--ability">Ability: <span id="card_ability"></span></p>
+          <p class="card__info card__info--hiddenAbility">Hidden Ability: <span id="card_abilityHidden"></span></p>
+        </div>
+      </div>
+    </template>
+
     <footer>
     </footer>
 
