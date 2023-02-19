@@ -8,7 +8,7 @@ function getRandomNumber(min, max) {
 }
 
 function setAppVersion() {
-  const APP_VERSION = "1.2.0";
+  const APP_VERSION = "1.3.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -42,7 +42,7 @@ function setContent(dataArray) {
 
 function getPokeData(){
   const api = "https://pokeapi.co/api/v2/pokemon";
-  const randomPokemonID = getRandomNumber(1, 101);
+  const randomPokemonID = getRandomNumber(1, 1008);
   const apiURL = `${api}/${randomPokemonID}/`;
 
   fetch(apiURL)
