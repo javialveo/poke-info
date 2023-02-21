@@ -8,7 +8,7 @@ function getRandomNumber(min, max) {
 }
 
 function setAppVersion() {
-  const APP_VERSION = "1.3.0";
+  const APP_VERSION = "1.4.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -16,17 +16,18 @@ function setAppVersion() {
 
 function setContent(dataArray) {
   const cardContainer = document.getElementById("cardContainer");
-  const template = document.getElementById("cardTemplate");
-  const clone = template.content.cloneNode(true);
+  const fragment = document.createDocumentFragment();
+  const template = document.querySelector("#cardTemplate").content;
+  const clone = template.cloneNode(true);
 
-  const cardAbility = clone.getElementById("card_ability");
-  const cardAbilityHidden = clone.getElementById("card_abilityHidden");
-  const cardHeight = clone.getElementById("card_height");
-  const cardID = clone.getElementById("card_id");
-  const cardPicture = clone.getElementById("card_picture");
-  const cardTitle = clone.getElementById("card_title");
-  const cardType = clone.getElementById("card_type");
-  const cardWeight = clone.getElementById("card_weight");
+  const cardAbility = clone.getElementById("cardAbility");
+  const cardAbilityHidden = clone.getElementById("cardHiddenAbility");
+  const cardHeight = clone.getElementById("cardHeight");
+  const cardID = clone.getElementById("cardID");
+  const cardPicture = clone.getElementById("cardPicture");
+  const cardTitle = clone.getElementById("cardTitle");
+  const cardType = clone.getElementById("cardType");
+  const cardWeight = clone.getElementById("cardWeight");
 
   cardAbility.textContent = dataArray[0];
   cardAbilityHidden.textContent = dataArray[1];
@@ -37,7 +38,8 @@ function setContent(dataArray) {
   cardType.textContent = dataArray[6];
   cardWeight.textContent = dataArray[7];
 
-  cardContainer.appendChild(clone);
+  fragment.appendChild(clone);
+  cardContainer.appendChild(fragment);
 }
 
 function getPokeData(){
@@ -116,5 +118,7 @@ function getPokeData(){
   });
 }
 
-setAppVersion();
 getPokeData();
+
+setAppVersion();
+//setContent(["nadasuperfantástico", "mucho", "2m", "001", "img/11.png", "PokePrueba", "Normal", "120kg"]);

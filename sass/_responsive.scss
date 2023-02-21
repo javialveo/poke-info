@@ -1,25 +1,25 @@
-@media screen and (min-width:500px){
+@media screen and (min-width:600px){
   .card{
-    width: 400px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
 
-    &--id{
-      width: 20%;
+    &__box{
+      align-content: center;
+
+      &--picture{
+        grid-column: 2;
+      }
+      &--info{
+        grid-column: 3;
+      }
     }
-    &--ability{
-      width: 20%;
+
+    &__picture{
+      width: 100%;
     }
-    &--hiddenAbility{
-      width: 20%;
-    }
-    &--height{
-      width: 20%;
-    }
-    &--type{
-      width: 20%;
-    }
-    &--weight{
-      width: 20%;
+    
+    &__title{
+      grid-column: 1 / span 4;
     }
   }
 }

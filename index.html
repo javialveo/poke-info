@@ -10,31 +10,35 @@
   <body>
     <header class="header">
       <h1 class="header__title">PokeInfo</h1>
-      <p class="header__information">versión: <span id="versionApp">0.0.0</span></p>
+      <p>Versión: <span id="versionApp"></span></p>
     </header>
 
-    <main id="cardContainer" class="container">
-    </main>
+    <main id="cardContainer" class="container"></main>
+
+    <footer class="footer">
+      <p class="footer__information">
+        Developed by <a href="http://javialveo.com" target="_blank" title="Enlace hacia la web de Eduardo Alveo">Eduardo Alveo</a>.
+        Powered by <a href="https://pokeapi.co/" target="_blank" title="Enlace hacia la web de la api PokeApi">PokeApi</a>.
+        Pokémon and Pokémon character names are trademarks of Nintendo.
+      </p>
+    </footer>
 
     <template id="cardTemplate">
       <div class="card">
-        <h3 id="card_title" class="card__title">pokemon</h3>
-        <div class="card__box card__box--picture"><img id="card_picture" class="card__picture"></div>
-        <div class="card__box card__box--body">
-          <p class="card__info card__info--id">ID: <span id="card_id"></span></p>
-          <p class="card__info card__info--type">Type: <span id="card_type"></span></p>
-          <p class="card__info card__info--height">Height: <span id="card_height"></span></p>
-          <p class="card__info card__info--weight">Weight: <span id="card_weight"></span></p>
-          <p class="card__info card__info--ability">Ability: <span id="card_ability"></span></p>
-          <p class="card__info card__info--hiddenAbility">Hidden Ability: <span id="card_abilityHidden"></span></p>
+        <h3 id="cardTitle" class="card__title"></h3>
+        <figure id="cardBox" class="card__box card__box--picture">
+          <img id="cardPicture" class="card__picture">
+        </figure>
+        <div class="card__box card__box--info">
+          <p class="card__info">ID: <span id="cardID"></span></p>
+          <p class="card__info">Type: <span id="cardType"></span></p>
+          <p class="card__info">Height: <span id="cardHeight"></span></p>
+          <p class="card__info">Weight: <span id="cardWeight"></span></p>
+          <p class="card__info">Ability: <span id="cardAbility"></span></p>
+          <p class="card__info">Hidden Ability: <span id="cardHiddenAbility"></span></p>
         </div>
       </div>
     </template>
-
-    <footer class="footer">
-      <p class="footer__information">Developed by Eduardo Alveo. Powered by <a href="https://pokeapi.co/" target="_blank">PokeApi</a>. Pokémon and Pokémon character names are trademarks of Nintendo.</p>
-    </footer>
-
     <script src="js/main.js"></script>
   </body>
 </html>
