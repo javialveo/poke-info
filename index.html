@@ -13,7 +13,16 @@
       <p>Versión: <span id="versionApp"></span></p>
     </header>
 
-    <main id="cardContainer" class="container"></main>
+    <main class="container">
+      <form class="form">
+        <input id="searchInput" class="form__input" type="search">
+        <button id="buttonSearch" class="form__button" type="button">Search</button>
+      </form>
+      <div  id="cardContainer" class="card__container" ></div>
+      <form class="form">
+        <button id="changeButton" class="form__button" type="button">Change Pokemon</button>
+      </form>
+    </main>
 
     <footer class="footer">
       <p class="footer__information">
@@ -24,7 +33,7 @@
     </footer>
 
     <template id="cardTemplate">
-      <div class="card">
+      <div id="cards" class="card">
         <h3 id="cardTitle" class="card__title"></h3>
         <figure id="cardBox" class="card__box card__box--picture">
           <img id="cardPicture" class="card__picture">

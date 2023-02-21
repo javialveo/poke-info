@@ -19,6 +19,11 @@
     }
   }
 
+  &__container{
+    margin: 0 auto;
+    width: 90%;
+  }
+
   &__info{
     font-weight: 600;
     text-transform: capitalize;
@@ -36,5 +41,21 @@
     font-size: 1.6em;
     text-align: center;
     text-transform: capitalize;
+  }
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  &__button{
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  &__input{
+    margin-right: 5px;
+    padding: 5px;
   }
 }

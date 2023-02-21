@@ -8,7 +8,7 @@ function getRandomNumber(min, max) {
 }
 
 function setAppVersion() {
-  const APP_VERSION = "1.4.0";
+  const APP_VERSION = "2.0.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -16,9 +16,9 @@ function setAppVersion() {
 
 function setContent(dataArray) {
   const cardContainer = document.getElementById("cardContainer");
-  const fragment = document.createDocumentFragment();
   const template = document.querySelector("#cardTemplate").content;
   const clone = template.cloneNode(true);
+  const card = document.querySelector("#cards");
 
   const cardAbility = clone.getElementById("cardAbility");
   const cardAbilityHidden = clone.getElementById("cardHiddenAbility");
@@ -38,14 +38,15 @@ function setContent(dataArray) {
   cardType.textContent = dataArray[6];
   cardWeight.textContent = dataArray[7];
 
-  fragment.appendChild(clone);
-  cardContainer.appendChild(fragment);
+  if(cardContainer.hasChildNodes() == true){
+    cardContainer.removeChild(card);
+  }
+  cardContainer.appendChild(clone);
 }
 
-function getPokeData(){
+function getPokeData(idPokemon){
   const api = "https://pokeapi.co/api/v2/pokemon";
-  const randomPokemonID = getRandomNumber(1, 1008);
-  const apiURL = `${api}/${randomPokemonID}/`;
+  const apiURL = `${api}/${idPokemon}/`;
 
   fetch(apiURL)
   .then(response => response.json())
@@ -118,7 +119,32 @@ function getPokeData(){
   });
 }
 
-getPokeData();
+
+function searchPokemon(){
+  const searchInput = document.querySelector("#searchInput");
+
+  getPokeData(searchInput.value);
+}
+
+function changePokemon(){
+  getPokeData(getRandomNumber(1, 1008));
+}
+
+function setButtonEvents(){
+  const eventContainer = document.addEventListener("click", e =>{
+    const targetEvent = e.target;
+
+    if(targetEvent.matches("#buttonSearch")){
+      searchPokemon();
+    }
+    if(targetEvent.matches("#changeButton")){
+      changePokemon();
+    }
+  });
+}
+
+getPokeData(getRandomNumber(1, 1008));
 
 setAppVersion();
 //setContent(["nadasuperfantástico", "mucho", "2m", "001", "img/11.png", "PokePrueba", "Normal", "120kg"]);
+setButtonEvents();

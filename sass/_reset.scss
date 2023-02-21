@@ -29,6 +29,10 @@ a{
   @extend body;
 }
 
+form, input, label, button{
+  @extend body;
+}
+
 img{
   @extend body;
 }
