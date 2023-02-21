@@ -8,7 +8,7 @@ function getRandomNumber(min, max) {
 }
 
 function setAppVersion() {
-  const APP_VERSION = "2.1.0";
+  const APP_VERSION = "2.2.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -122,8 +122,12 @@ function getPokeData(idPokemon){
 
 function searchPokemon(){
   const searchInput = document.querySelector("#searchInput");
+  const idPokemon = parseInt(searchInput.value);
 
-  getPokeData(searchInput.value);
+  const value = Number.isNaN(idPokemon);
+
+  if(!value)
+    getPokeData(idPokemon);
 }
 
 function changePokemon(){
